@@ -19,8 +19,12 @@
     <ver>4.6</ver>
     <ver>4.7</ver>
   </compatibility>
-  <comments></comments>
+  <comments/>
   <civix>
     <namespace>CRM/Anonymize</namespace>
+    <format>22.05.2</format>
   </civix>
+  <classloader>
+    <psr4 prefix="Civi\" path="Civi"/>
+  </classloader>
 </extension>

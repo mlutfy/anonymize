@@ -20,7 +20,7 @@ use Civi\Test\TransactionalInterface;
  *
  * @group headless
  */
-class api_v3_AnonymizeTest extends \PHPUnit_Framework_TestCase implements HeadlessInterface, HookInterface, TransactionalInterface {
+class api_v3_AnonymizeTest extends \PHPUnit\Framework\TestCase implements HeadlessInterface, HookInterface, TransactionalInterface {
 
   public function setUpHeadless() {
     // Civi\Test has many helpers, like install(), uninstall(), sql(), and sqlFile().
