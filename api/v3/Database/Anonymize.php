@@ -5,8 +5,7 @@ require_once 'vendor/autoload.php';
 use Symfony\Component\Yaml\Yaml;
 use Civi\Anonymize\ConfigProcessor;
 use Civi\Anonymize\SQL;
-
-define(FIELDS_CONFIG, __DIR__ . '/../../../fields.yml');
+use CRM_Anonymize_ExtensionUtil as E;
 
 /**
  * Database.Anonymize API specification (optional)
@@ -38,7 +37,7 @@ function civicrm_api3_database_Anonymize($params) {
     'dry-run' => 0,
   );
   $params = array_merge($defaults, $params);
-  $config = Yaml::parse(file_get_contents(FIELDS_CONFIG));
+  $config = Yaml::parse(file_get_contents(E::path('fields.yml')));
   $processor = new ConfigProcessor($params['strategy'], $params['locale'], $config);
   $processor->process();
   if ($params['dry-run']) {
